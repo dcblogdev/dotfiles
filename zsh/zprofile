@@ -1,8 +1,4 @@
-# Added by Toolbox App
-export PATH="$PATH:/Users/dave/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-
-# Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 function p() {
@@ -21,26 +17,21 @@ function pf() {
    fi
 }
 
+alias pd='vendor/bin/pest --dirty'
+alias pb='vendor/bin/pest --bail'
+alias pr='vendor/bin/pest --retry'
 alias a='php artisan'
 alias t='clear && php artisan test'
 alias tp='clear && php artisan test --parallel'
-alias pint='./vendor/bin/pint'
-alias st='./vendor/bin/phpstan analyse --ansi --memory-limit=-1'
+alias pi='./vendor/bin/pint'
+alias s='./vendor/bin/sail'
+alias sa='./vendor/bin/sail artisan'
+alias st='./vendor/bin/phpstan analyse'
 alias nr='npm run'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
-
-# PHP switcher
-alias php8='valet use php@81'
-alias php74='valet use php@74'
-alias phpunit='vendor/bin/phpunit'
-alias pest='vendor/bin/pestphp'
-
-#valet
-alias vs='valet secure'
-alias tunnel='valet share -subdomain=dc -region=eu'
 
 #host file
 alias hostfile='sudo vi /etc/hosts'
@@ -69,15 +60,13 @@ alias glog='git log --oneline --decorate --graph --all'
 
 #directories
 alias ls='ls -ls -a'
-alias projects='cd ~/Documents/local/projects'
-alias personal='cd ~/sites/personal'
-alias wip='cd ~/sites/wip'
-alias packages='cd ~/sites/packages'
-alias blog='cd ~/sites/personal/dcblog'
-alias cms='cd ~/sites/iw/cms'
 
 #ssh
 alias sshkey='cat ~/.ssh/id_rsa.pub'
 alias sshconfig='vi ~/.ssh/config'
 alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+#valet
+alias vs='valet secure'
+alias tunnel='valet share -subdomain=dc -region=eu'
