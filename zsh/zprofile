@@ -27,6 +27,7 @@ alias pi='./vendor/bin/pint'
 alias s='./vendor/bin/sail'
 alias sa='./vendor/bin/sail artisan'
 alias st='./vendor/bin/phpstan analyse'
+alias i='./vendor/bin/phpinsights'
 alias nr='npm run'
 
 # Show/hide hidden files in Finder
