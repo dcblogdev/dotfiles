@@ -1,3 +1,4 @@
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -30,6 +31,9 @@ alias sa='./vendor/bin/sail artisan'
 alias st='./vendor/bin/phpstan analyse'
 alias i='./vendor/bin/phpinsights'
 alias nr='npm run'
+alias nrs='npm run serve'
+alias nrb='npm run build'
+alias nrd='npm run dev'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
@@ -61,7 +65,7 @@ alias gno='git reset --hard HEAD'
 alias glog='git log --oneline --decorate --graph --all'
 
 #directories
-alias ls='ls -ls -a'
+#alias ls='ls -ls -a'
 
 #ssh
 alias sshkey='cat ~/.ssh/id_rsa.pub'
@@ -71,3 +75,6 @@ alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 #valet
 alias vs='valet secure'
 alias tunnel='valet share -subdomain=dc -region=eu'
+
+#programs
+alias vi='nvim'
