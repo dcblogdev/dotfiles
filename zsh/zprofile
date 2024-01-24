@@ -22,6 +22,8 @@ function pf() {
 alias pd='vendor/bin/pest --dirty'
 alias pb='vendor/bin/pest --bail'
 alias pr='vendor/bin/pest --retry'
+alias pttc='vendor/bin/pest --type-coverage'
+alias ptc='XDEBUG_MODE=coverage ./vendor/bin/pest --coverage'
 alias a='php artisan'
 alias t='clear && php artisan test'
 alias tp='clear && php artisan test --parallel'
