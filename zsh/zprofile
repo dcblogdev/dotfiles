@@ -19,13 +19,13 @@ function pf() {
    fi
 }
 
+alias a='php artisan'
 alias pd='vendor/bin/pest --dirty'
 alias pb='vendor/bin/pest --bail'
 alias pr='vendor/bin/pest --retry'
-alias pttc='vendor/bin/pest --type-coverage'
 alias pw='vendor/bin/pest --without-exception-handling'
 alias ptc='XDEBUG_MODE=coverage ./vendor/bin/pest --coverage'
-alias a='php artisan'
+alias pttc='vendor/bin/pest --type-coverage'
 alias t='clear && php artisan test'
 alias tp='clear && php artisan test --parallel'
 alias pi='./vendor/bin/pint'
@@ -69,7 +69,7 @@ alias nah='git reset --hard HEAD'
 alias glog='git log --oneline --decorate --graph --all'
 
 #directories
-#alias ls='ls -ls -a'
+alias ls='ls -ls -a'
 
 #ssh
 alias sshkey='cat ~/.ssh/id_rsa.pub'
