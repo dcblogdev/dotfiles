@@ -1,0 +1,16 @@
+// Settings in here override those in "LSP-json/LSP-json.sublime-settings"
+
+{
+	"enabled": true,
+    "command": [
+        "intelephense",
+        "--stdio",
+    ],
+    "scopes": ["source.php", "embedding.php"],
+    "syntaxes": ["Packages/PHP/PHP.sublime-syntax"],
+    "languageId": "php",
+    "initializationOptions": {
+        "clearCache": false,
+        "licenceKey": "",
+    },
+}

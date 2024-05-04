@@ -1,0 +1,13 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+    "default_encoding": "UTF-8",
+	"default_line_ending": "unix",
+	"font_size": 18,
+	"theme": "Adaptive.sublime-theme",
+	"color_scheme": "GitHub Dimmed.sublime-color-scheme",
+	"line_padding_top": 10,
+	"line_padding_bottom": 10,
+	"save_on_focus_lost": true,
+	"index_files": true,
+}

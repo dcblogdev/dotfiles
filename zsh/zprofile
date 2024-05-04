@@ -3,22 +3,19 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-function p() {
-   if [ -f vendor/bin/pest ]; then
-      vendor/bin/pest "$@"
-   else
-      vendor/bin/phpunit "$@"
-   fi
-}
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
-function pf() {
-   if [ -f vendor/bin/pest ]; then
-      vendor/bin/pest --filter "$@"
-   else
-      vendor/bin/phpunit --filter "$@"
-   fi
-}
+# Shortcuts
+alias gdr='cd ~/"Google Drive/My Drive"'
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias sit="cd ~/sites"
 
+# Laravel and packages
 alias a='php artisan'
 alias pd='vendor/bin/pest --dirty'
 alias pb='vendor/bin/pest --bail'
@@ -42,16 +39,26 @@ alias nrd='npm run dev'
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
 
-#host file
+# Host file
 alias hostfile='sudo vi /etc/hosts'
 
-#composer
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Composer
 alias cu='composer update'
 alias ci='composer install'
 alias cda='composer dump-autoload -o'
 alias cr='composer require'
 
-#git
+# GIT
+
+## Git add and commit
 function gac()
 {
    #usage gac . 'the message'
@@ -68,17 +75,31 @@ alias gpu='git pull'
 alias nah='git reset --hard HEAD'
 alias glog='git log --oneline --decorate --graph --all'
 
-#directories
+# Directories
 alias ls='ls -ls -a'
 
-#ssh
+# SSH
 alias sshkey='cat ~/.ssh/id_rsa.pub'
 alias sshconfig='vi ~/.ssh/config'
 alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 
-#valet
-alias vs='valet secure'
-alias tunnel='valet share -subdomain=dc -region=eu'
-
-#programs
+# Programs
 alias vi='nvim'
+
+## Run either Pest if installed otherwise use PHPUnit
+function p() {
+   if [ -f vendor/bin/pest ]; then
+      vendor/bin/pest "$@"
+   else
+      vendor/bin/phpunit "$@"
+   fi
+}
+
+## Run test with filter
+function pf() {
+   if [ -f vendor/bin/pest ]; then
+      vendor/bin/pest --filter "$@"
+   else
+      vendor/bin/phpunit --filter "$@"
+   fi
+}

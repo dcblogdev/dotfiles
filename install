@@ -26,24 +26,33 @@ ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 rm -rf $HOME./.config/nvim
 ln -sf $DOTFILES/nvim $HOME/.config/nvim
 
-rm -rf $HOME/tmux.conf
-# ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+rm -rf $HOME./.gitconfig
+ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
-# rm -rf $HOME/.yabairc
-# ln -s $DOTFILES/yabairc $HOME/.yabairc
-
-# rm -rf $HOME/.skhdrc
-# ln -s $DOTFILES/skhd/skhd $HOME/.skhdrc
+# Install Sublime Text settings
+cp -rf sublimetext/Packages ~/Library/Application\ Support/Sublime\ Text*/ 2> /dev/null
+cp -rf sublimetext/'Installed Packages' ~/Library/Application\ Support/Sublime\ Text*/ 2> /dev/null
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file ./Brewfile
+#brew bundle --file ./Brewfile
 
 # Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'secret'; FLUSH PRIVILEGES;"
+#mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'secret'; FLUSH PRIVILEGES;"
+
+# Create a projects directories
+mkdir $HOME/Herd
+mkdir $HOME/Herd/laravelmodules
+mkdir $HOME/Herd/packages
+mkdir $HOME/Herd/dc-projects
+mkdir $HOME/Herd/tallapps
+mkdir $HOME/Herd/wip
+
+# Clone Github repositories
+#./clone.sh
 
 # Symlink the Mackup config file to the home directory
 ln -s ./.mackup.cfg $HOME/.mackup.cfg

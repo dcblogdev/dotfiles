@@ -1,0 +1,14 @@
+[
+	{
+		"keys": ["ctrl+`"], "command": "toggle_terminus_panel", "args": {
+	        "config_name": "Default",
+	        "cwd": "${folder}"
+	    }
+	},
+	{
+		"keys": ["shift+ctrl+`"], "command": "terminus_open", "args": {
+	        "config_name": "Default",
+	        "cwd": "${folder}"
+	    }
+	}
+]
