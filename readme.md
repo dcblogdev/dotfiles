@@ -11,7 +11,7 @@
 4. Run the installation with:
 
     ```zsh
-    cd ~/.dotfiles && ./install.sh
+    cd ~/.dotfiles && ./install
     ```
 
 5. Start `Herd.app` and run its install process
